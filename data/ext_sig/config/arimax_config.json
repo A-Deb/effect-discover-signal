@@ -1,0 +1,7 @@
+{
+  "max_p": 15,
+  "max_d": 0,
+  "max_q": 7,
+  "external_source": "d2web",
+  "corr_th": 0.1
+}
