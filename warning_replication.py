@@ -255,8 +255,8 @@ def main(argv):
     # Load ground truth data
     # ts, es_query = dp.gt_time_series(args)
     
-    ts = dp.load_armstrong_internal()
-    # ts = dp.load_armstrong_endpoint_malware()
+    #ts = dp.load_armstrong_internal()
+    ts = dp.load_armstrong_endpoint_malware()
     es_query={}
     if ts is None:
         # print("Error: time series is not loaded properly")
