@@ -15,12 +15,16 @@ def get_files(directory):
 
 def main():	
 	file_list=get_files('./data/ext_sig/*')
-	# event_list=['endpoint-malware','malicious-email','malicious-destination']
-	event_list=['internal-armstrong']
+	event_list=['endpoint-malware','malicious-email','malicious-destination']
+	org_list=['orga','orgb']
+	method_list=['arimax','gru']
+	
 
 	for i in event_list:
-		for file in file_list:
-			os.system('python3 eval_warning_replication_test.py -ext {} -method arimax -target armstrong -event {}'.format(file,i))
+		for org in org_list:
+			for method in method_list:	
+				for file in file_list:
+					os.system('python3 eval_warning_replication.py -ext {} -method {} -target {} -event {}'.format(file,org,method,i))
 
 if __name__ == "__main__":
 	import sys
