@@ -16,7 +16,7 @@ import codecs
 import warnings
 
 
-import gen_warning_arima as arima
+
 import gen_warning_arimax as arimax
 
 
