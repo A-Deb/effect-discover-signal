@@ -15,8 +15,8 @@ def get_files(directory):
 
 def main():	
 	file_list=get_files('./data/ext_sig/*')
-	event_list=['endpoint-malware','malicious-email','malicious-destination']
-	org_list=['orga','orgb']
+	event_list=['endpoint-malware']
+	org_list=['armstrong']
 	method_list=['arimax','gru']
 	
 

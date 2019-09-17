@@ -18,6 +18,7 @@ import warnings
 
 
 import gen_warning_arimax as arimax
+import gen_warning_arima as arima
 
 
 from util.measures import measures
@@ -192,13 +193,9 @@ def run_arimax(args, ts, es_query, train_start_date, train_end_date,
                 args.warn_start_date +
                 pd.Timedelta(days=-1)).strftime("%Y%m%d") + '/malware'
             # print("Replication index: ", ex_index)
-        else:
-            ex_index = 'data/malware'
-        # print("\tindex: ", ex_index)
-        # ext_sources = args.external_source.split(";")
         ext_source_name = args.external_source
 
-        
+
         
         filename = './data/ext_sig/%s' % ext_source_name
         ts_ext = pd.read_csv(filename)
@@ -330,25 +327,10 @@ def main(argv):
 
     if ts_pred_rounded.sum() > 0:
 
-        company = model_output.get_target_orgnization(args)
-        if args.sample_warning:
-            if company == "knox":
-                warning_obj = model_output.write_model_output_v2(
-                    args, ts_pred_rounded, model_id,
-                    output_name=output_name, save_warning=False)
-            else:
-                warning_obj = model_output.write_model_output_v2(
-                    args, ts_pred_rounded, model_id,
-                    output_name=output_name, save_warning=False)
-            # save warning obj
-            id_prefix = warning_obj.warnings[0]['warning']['id'].rsplit("T", 1)[
-                0]
-            # print(id_prefix)
             ext_name = args.external_source.split('.')[0]
             filename = "warning_" + ext_name + "_" + id_prefix + ".json"
             filepath = os.path.join(args.warning_dir, filename)
             os.makedirs(os.path.split(filepath)[0], exist_ok=True)
-            warning_obj.save(filepath)
 
         filename = "ts_" + ext_name + "_" + model_id + ".csv"
         filepath = os.path.join(args.warning_dir, filename)
@@ -439,7 +421,6 @@ def main(argv):
     
 
     
-    #scoring code goes here:
 
 
     

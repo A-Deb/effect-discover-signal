@@ -1,0 +1,10 @@
+# The sc-client package requires sshtunnel, which requires paramiko, which
+# requires cryptography.  If you are installing on linux you may get a
+# failure when cryptography tries to install: if so, see Stack Overflow [1].
+#
+# https://stackoverflow.com/a/36057779
+
+numpy==1.13.0
+tldextract==2.1.0
+jupyter==1.0.0
+

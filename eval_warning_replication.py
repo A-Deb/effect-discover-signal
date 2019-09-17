@@ -14,28 +14,18 @@ def main(args):
     if args.method =='arimax':
         methods = ['arimax']
     else:
-        methods = ['arima']
-    # etypes=['internal']
+        methods = ['gru']
+
     dset= args.target
 
     if args.event =='endpoint-malware':
         etypes = ['endpoint-malware']
-    elif args.event =='malicious-email':
-        etpyes = ['malicious-email']
-    elif args.event =='malicious-destination':
-        etypes = ['malicious-destination']
-    elif args.event =='internal-armstrong':
-        etypes=['internal']
-    # etypes=['internal']
 
-    data_sources = ["armstrong_endpoint-malware", "armstrong_malicious-email",
-                    "armstrong_malicious-destination"]
+    data_sources = ["armstrong_endpoint-malware"]
 
 
    
 
-    # warn_start_dates= ['20180601', '20180701']
-    # warn_end_dates= ['20180630', '20170731']
 
 
     args_wsd='2018-06-01'
@@ -53,15 +43,6 @@ def main(args):
     warn_start_dates=warn_start_dates.strftime('%Y%m%d')
     warn_end_dates=warn_end_dates.strftime('%Y%m%d')
 
-
-
-
-
-
-
-
-
-
     train_start_dates = ['20180101']
     
     time_freqs = ['D', '12H', '6H', '3H']
@@ -70,11 +51,6 @@ def main(args):
     prediction_types = ['static', 'stochastic']
     prediction_type = prediction_types[0]
     n_trials = 20
-
-    
-
-
-
 
 
     for eid, etype in enumerate(etypes):
@@ -112,7 +88,7 @@ def main(args):
                 
                 
 
-                if method == "arima" or "arimax":
+                if method == "arimax":
                     params.extend(["--model-config-file",
                                    "data/config/{}_config.json".format(method)])
                 with warnings.catch_warnings():
