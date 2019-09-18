@@ -11,7 +11,10 @@ This file will perform the test on the external signals in the data folder.
 Here you can set the 'event_type', 'organization', and 'method' selections. This file will run the eval_warning_replication.py script.
 
 ### eval_warning_replication.py
+This file will perform the warning generation either at the freq='W' (weekly) or the freq='M' (monthly) level. It does so by generating the dates that will be used for the timeseries prediction.
 
+### warning_replication.py
+This file with either call ARIMA (for the baseline), ARIMAX (for ARIMA with external signal) or 
 
 ### Baserate Model
 
