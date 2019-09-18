@@ -14,7 +14,7 @@ Here you can set the 'event_type', 'organization', and 'method' selections. This
 This file will perform the warning generation either at the freq='W' (weekly) or the freq='M' (monthly) level. It does so by generating the dates that will be used for the timeseries prediction.
 
 ### warning_replication.py
-This file with either call ARIMA (for the baseline), ARIMAX (for ARIMA with external signal) or 
+This file with either call ARIMA (for the baseline), ARIMAX (for ARIMA with external signal) or GRU (for GRU with external signal).
 
 ### Baserate Model
 
