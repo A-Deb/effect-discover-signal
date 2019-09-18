@@ -7,6 +7,10 @@ This repository contains following models for predicting expected number of cybe
 
 
 ### total_eval.py
+This file will perform the test on the external signals in the data folder.
+Here you can set the 'event_type', 'organization', and 'method' selections. This file will run the eval_warning_replication.py script.
+
+### eval_warning_replication.py
 
 
 ### Baserate Model
